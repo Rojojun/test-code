@@ -1,4 +1,4 @@
-package com.rojojun.cafekiosk.unit;
+package com.rojojun.cafekiosk.unit.beverage;
 
 public class Latte implements Beverage{
     @Override
