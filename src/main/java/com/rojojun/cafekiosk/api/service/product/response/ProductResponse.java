@@ -1,4 +1,4 @@
-package com.rojojun.cafekiosk.api.product.response;
+package com.rojojun.cafekiosk.api.service.product.response;
 
 import com.rojojun.cafekiosk.domain.product.Product;
 import com.rojojun.cafekiosk.domain.product.ProductSellingStatus;

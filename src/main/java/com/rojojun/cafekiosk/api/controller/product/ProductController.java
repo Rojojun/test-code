@@ -1,7 +1,7 @@
-package com.rojojun.cafekiosk.api.product.controller;
+package com.rojojun.cafekiosk.api.controller.product;
 
-import com.rojojun.cafekiosk.api.product.ProductService;
-import com.rojojun.cafekiosk.api.product.response.ProductResponse;
+import com.rojojun.cafekiosk.api.service.product.ProductService;
+import com.rojojun.cafekiosk.api.service.product.response.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

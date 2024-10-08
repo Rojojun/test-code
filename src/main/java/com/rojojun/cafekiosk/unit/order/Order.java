@@ -1,5 +1,6 @@
 package com.rojojun.cafekiosk.unit.order;
 
+import com.rojojun.cafekiosk.domain.product.Product;
 import com.rojojun.cafekiosk.unit.beverage.Beverage;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
