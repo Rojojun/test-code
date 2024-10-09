@@ -1,6 +1,6 @@
 package com.rojojun.cafekiosk.api.service.order;
 
-import com.rojojun.cafekiosk.api.service.order.request.OrderCreateRequest;
+import com.rojojun.cafekiosk.api.controller.order.dto.request.OrderCreateRequest;
 import com.rojojun.cafekiosk.api.service.order.response.OrderResponse;
 import com.rojojun.cafekiosk.domain.order.OrderRepository;
 import com.rojojun.cafekiosk.domain.orderProduct.OrderProductRepository;

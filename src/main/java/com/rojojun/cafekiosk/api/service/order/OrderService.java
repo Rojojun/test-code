@@ -1,6 +1,6 @@
 package com.rojojun.cafekiosk.api.service.order;
 
-import com.rojojun.cafekiosk.api.service.order.request.OrderCreateRequest;
+import com.rojojun.cafekiosk.api.service.order.request.OrderCreateServiceRequest;
 import com.rojojun.cafekiosk.api.service.order.response.OrderResponse;
 import com.rojojun.cafekiosk.domain.order.Order;
 import com.rojojun.cafekiosk.domain.order.OrderRepository;
@@ -27,7 +27,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final StockRepository stockRepository;
 
-    public OrderResponse createOrder(OrderCreateRequest request, LocalDateTime registeredTime) {
+    public OrderResponse createOrder(OrderCreateServiceRequest request, LocalDateTime registeredTime) {
         List<String> productNumbers = request.getProductNumbers();
         List<Product> duplicateProducts = findProductsBy(productNumbers);
 
