@@ -5,6 +5,7 @@ import com.rojojun.cafekiosk.domain.product.BaseEntity;
 import com.rojojun.cafekiosk.domain.product.Product;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -31,17 +32,22 @@ public class Order extends BaseEntity {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderProduct> orderProducts = new ArrayList<>();
 
-    public Order(List<Product> products, LocalDateTime now) {
+    @Builder
+    private Order(OrderStatus orderStatus, LocalDateTime registeredDateTime, List<Product> products) {
         this.orderStatus = OrderStatus.INIT;
         this.totalPrice = calculateTotalPrice(products);
-        this.registeredDateTime = now;
+        this.registeredDateTime = registeredDateTime;
         this.orderProducts = products.stream()
                 .map(product -> new OrderProduct(this, product))
                 .toList();
     }
 
     public static Order create(List<Product> products, LocalDateTime registeredTime) {
-        return new Order(products, registeredTime);
+        return Order.builder()
+                .orderStatus(OrderStatus.INIT)
+                .products(products)
+                .registeredDateTime(registeredTime)
+                .build();
     }
 
     private int calculateTotalPrice(List<Product> products) {
