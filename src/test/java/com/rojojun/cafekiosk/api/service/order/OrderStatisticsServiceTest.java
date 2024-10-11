@@ -49,9 +49,10 @@ class OrderStatisticsServiceTest {
     private MailSendHistoryRepository mailSendHistoryRepository;
 
     @MockBean
-    private MailService mailService;
-    @Autowired
     private MailSendClient mailSendClient;
+
+    @MockBean
+    private MailService mailService;
 
     @AfterEach
     void tearDown() {
@@ -97,7 +98,7 @@ class OrderStatisticsServiceTest {
     private Order createPaymentCompletedOrder(LocalDateTime now, List<Product> products) {
         Order order = Order.builder()
                 .products(products)
-                .orderStatus(OrderStatus.PAYMENT_COMPLETED)
+                .orderStatus(OrderStatus.COMPLETED)
                 .registeredDateTime(now)
                 .build();
         return orderRepository.save(order);

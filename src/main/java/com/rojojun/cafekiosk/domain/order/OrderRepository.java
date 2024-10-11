@@ -10,9 +10,6 @@ import java.util.List;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
-    @Query("select o from Order o" +
-            "   where o.registeredDateTime >= :startDateTime" +
-            "       and o.registeredDateTime < :endTime" +
-            "       and o.orderStatus = :orderStatus")
+    @Query("select o from Order o where o.registeredDateTime >= :startDateTime and o.registeredDateTime <= :endTime and o.orderStatus = :orderStatus")
     List<Order> findOrdersBy(LocalDateTime startDateTime, LocalDateTime endTime, OrderStatus orderStatus);
 }
