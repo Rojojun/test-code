@@ -170,6 +170,7 @@ class OrderServiceTest {
 
         Stock stock1 = Stock.create("001", 1);
         Stock stock2 = Stock.create("002", 1);
+        stock1.deductQuantity(1);
         stockRepository.saveAll(List.of(stock1, stock2));
 
         OrderCreateRequest request = OrderCreateRequest.builder()
