@@ -34,7 +34,7 @@ public class Order extends BaseEntity {
 
     @Builder
     private Order(OrderStatus orderStatus, LocalDateTime registeredDateTime, List<Product> products) {
-        this.orderStatus = OrderStatus.INIT;
+        this.orderStatus = orderStatus;
         this.totalPrice = calculateTotalPrice(products);
         this.registeredDateTime = registeredDateTime;
         this.orderProducts = products.stream()
