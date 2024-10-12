@@ -7,6 +7,8 @@ import com.rojojun.cafekiosk.domain.product.ProductRepository;
 import com.rojojun.cafekiosk.domain.product.ProductSellingStatus;
 import com.rojojun.cafekiosk.domain.product.ProductType;
 import jakarta.transaction.Transactional;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,16 @@ class ProductServiceTest {
     private ProductService productService;
     @Autowired
     private ProductRepository productRepository;
+
+    @BeforeAll
+    static void beforeAll() {
+
+    }
+
+    @BeforeEach
+    void setUp() {
+
+    }
 
     @DisplayName("신규 상품을 등록한다. 상품번호는 가장 최근 상품의 상품번호에서 1 증가한 값이다.")
     @Test
